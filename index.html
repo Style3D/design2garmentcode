@@ -71,18 +71,18 @@
                   <div class="is-size-5 publication-authors">
                     <span class="author-block"><sup>1</sup>Zhejiang Sci-Tech University,&nbsp;&nbsp;&nbsp;&nbsp;</span>
                     <span class="author-block"><sup>2</sup>Style3D Research,&nbsp;&nbsp;&nbsp;&nbsp;</span>
-                    <span class="author-block"><sup>3</sup>Institution Name,&nbsp;&nbsp;&nbsp;&nbsp;</span>
-                    <span class="author-block"><sup>4</sup>Institution Name</span>
+                    <span class="author-block"><sup>3</sup>Shanghai Jiao Tong University,&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                    <span class="author-block"><sup>4</sup>Zhejiang University</span>
                   </div>
 
                   <div class="column has-text-centered">
                     <div class="publication-links">
                          <!-- Arxiv PDF link -->
                       <span class="link-block">
-                        <a href="https://arxiv.org/pdf/<ARXIV PAPER ID>.pdf" target="_blank"
+                        <a href="http://arxiv.org/abs/2412.08603" target="_blank"
                         class="external-link button is-normal is-rounded is-dark">
                         <span class="icon">
-                          <i class="fas fa-file-pdf"></i>
+                          <i class="ai ai-arxiv"></i>
                         </span>
                         <span>Paper</span>
                       </a>
@@ -90,18 +90,18 @@
 
                     <!-- Supplementary PDF link -->
                     <span class="link-block">
-                      <a href="static/pdfs/supplementary_material.pdf" target="_blank"
+                      <a href="" target="_blank"
                       class="external-link button is-normal is-rounded is-dark">
                       <span class="icon">
-                        <i class="fas fa-file-pdf"></i>
+                        <i class="fas fa-database	"></i>
                       </span>
-                      <span>Supplementary</span>
+                      <span>Data</span>
                     </a>
                   </span>
 
                   <!-- Github link -->
                   <span class="link-block">
-                    <a href="https://github.com/YOUR REPO HERE" target="_blank"
+                    <a href="https://github.com/Style3D/SXDGarmentCode" target="_blank"
                     class="external-link button is-normal is-rounded is-dark">
                     <span class="icon">
                       <i class="fab fa-github"></i>
@@ -112,12 +112,12 @@
 
                 <!-- ArXiv abstract Link -->
                 <span class="link-block">
-                  <a href="https://arxiv.org/abs/<ARXIV PAPER ID>" target="_blank"
+                  <a href="" target="_blank"
                   class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
-                    <i class="ai ai-arxiv"></i>
+                    <i class="fas fa-democrat	"></i>
                   </span>
-                  <span>arXiv</span>
+                  <span>Web Demo</span>
                 </a>
               </span>
             </div>
@@ -133,14 +133,20 @@
 <section class="hero teaser">
   <div class="container is-max-desktop">
     <div class="hero-body">
-      <video poster="" id="tree" autoplay controls muted loop height="100%">
-        <!-- Your video here -->
-        <source src="static/videos/banner_video.mp4"
-        type="video/mp4">
-      </video>
-      <h2 class="subtitle has-text-centered">
-        Aliquam vitae elit ullamcorper tellus egestas pellentesque. Ut lacus tellus, maximus vel lectus at, placerat pretium mi. Maecenas dignissim tincidunt vestibulum. Sed consequat hendrerit nisl ut maximus. 
-      </h2>
+      <div class="columns is-vcentered">
+        <div class="column is-half">
+          <figure class="image">
+            <img src="static/images/neural_symbolic-teaser.png" alt="Teaser Image">
+          </figure>
+        </div>
+        <div class="column is-half">
+          <h2 class="content has-text-left">
+              Design2GarmentCode is a motility-agnostic sewing pattern generation framework that leverages fine-tuned Large Multimodal Models to generate parametric pattern-making programs from multi-modal design concepts.
+              <br><br>
+              Compared with previous methods that directly synthesize vector-quantized patterns, synthesizing directly parametric pattern-making programs allows Design2GarmentCode to generate dedicated, structurally correct patterns from multi-modal design inputs with minimal computational and data requirements.  
+          </h2>
+        </div>
+      </div>
     </div>
   </div>
 </section>
@@ -154,7 +160,11 @@
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ullamcorper tellus sed ante aliquam tempus. Etiam porttitor urna feugiat nibh elementum, et tempor dolor mattis. Donec accumsan enim augue, a vulputate nisi sodales sit amet. Proin bibendum ex eget mauris cursus euismod nec et nibh. Maecenas ac gravida ante, nec cursus dui. Vivamus purus nibh, placerat ac purus eget, sagittis vestibulum metus. Sed vestibulum bibendum lectus gravida commodo. Pellentesque auctor leo vitae sagittis suscipit.
+            Sewing patterns, the essential blueprints for fabric cutting and tailoring, act as a crucial bridge between design concepts and producible garments.
+            However, existing uni-modal sewing pattern generation models struggle to effectively encode complex design concepts with a multi-modal nature and correlate them with vectorized sewing patterns that possess precise geometric structures and intricate sewing relations.
+            In this work, we propose a novel sewing pattern generation approach <b>Design2GarmentCode</b> based on Large Multimodal Models (LMMs), to generate parametric pattern-making programs from multi-modal design concepts.
+            LMM offers an intuitive interface for interpreting diverse design inputs, while pattern-making programs could serve as well-structured and semantically meaningful representations of sewing patterns, and act as a robust bridge connecting the cross-domain pattern-making knowledge embedded in LMMs with vectorized sewing patterns.
+            Experimental results demonstrate that our method can flexibly handle various complex design expressions such as images, textual descriptions, designer sketches, or their combinations, and convert them into size-precise sewing patterns with correct stitches. Compared to previous methods, our approach significantly enhances training efficiency, generation quality, and authoring flexibility.
           </p>
         </div>
       </div>
@@ -163,128 +173,137 @@
 </section>
 <!-- End paper abstract -->
 
-
-<!-- Image carousel -->
-<section class="hero is-small">
-  <div class="hero-body">
-    <div class="container">
-      <div id="results-carousel" class="carousel results-carousel">
-       <div class="item">
-        <!-- Your image here -->
-        <img src="static/images/carousel1.jpg" alt="MY ALT TEXT"/>
-        <h2 class="subtitle has-text-centered">
-          First image description.
-        </h2>
-      </div>
-      <div class="item">
-        <!-- Your image here -->
-        <img src="static/images/carousel2.jpg" alt="MY ALT TEXT"/>
-        <h2 class="subtitle has-text-centered">
-          Second image description.
-        </h2>
-      </div>
-      <div class="item">
-        <!-- Your image here -->
-        <img src="static/images/carousel3.jpg" alt="MY ALT TEXT"/>
-        <h2 class="subtitle has-text-centered">
-         Third image description.
-       </h2>
-     </div>
-     <div class="item">
-      <!-- Your image here -->
-      <img src="static/images/carousel4.jpg" alt="MY ALT TEXT"/>
-      <h2 class="subtitle has-text-centered">
-        Fourth image description.
+<!-- Method -->
+<section class="hero teaser">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+      <br>
+      <h2 class="title is-3">Method</h2>
+      <figure class="image">
+        <img src="static/images/neural_symbolic-pipeline.png" alt="Pipeline Overview">
+      </figure>
+      <h2 class="content">
+          <br>
+          <b>Overview of Dress2GarmentCode.</b> 
+          <small>
+          (1) <b>Program Learning</b>: we finetune the <i>DSL Generation Agent (DSL-GA)</i> using GarmentCode example programs, teaching it the GarmentCode grammar and the semantics of each design parameter. 
+          (2) <b>Prompt Synthesis</b>: the DSL-GA generates prompts for the <i>Multi-Modal Understanding Agent (MMUA)</i> to interpret and extract relevant design features from the input (3). 
+          (4) <b>Program Synthesis</b>: based on the MMUA's responses, the DSL-GA synthesizes GarmentCode-compliant design configurations and garment programs, which are then executed by the GarmentCode engine to produce sewing patterns and simulated garments (5). 
+          To enhance robustness, we incorporate two validation loops: during program synthesis, we employ rule-based validations (7) to ensure the MMUA's outputs are sufficient for generating complete and valid garment programs and design parameters; after the initial generation, the MMUA compares the generated design with the input and suggests modifications to minimize discrepancies.
+        </small>
       </h2>
     </div>
   </div>
-</div>
-</div>
 </section>
-<!-- End image carousel -->
+<!-- End teaser video -->
 
 
-
-
-<!-- Youtube video -->
-<section class="hero is-small is-light">
-  <div class="hero-body">
-    <div class="container">
-      <!-- Paper video. -->
-      <h2 class="title is-3">Video Presentation</h2>
-      <div class="columns is-centered has-text-centered">
-        <div class="column is-four-fifths">
-          
-          <div class="publication-video">
-            <!-- Youtube embed code here -->
-            <iframe src="https://www.youtube.com/embed/JkaxUblCGz0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-          </div>
-        </div>
-      </div>
+<!-- Method -->
+<section class="hero teaser">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+      <br>
+      <h2 class="title is-3">Text Guided Generation</h2>
+      <h2 class="content">
+        <br>
+        <b>Quality Comparison on Text-Guided Sewing Pattern Generation.</b> 
+        <small>
+          For each design, we present the generated pattern using our method (left) alongside <a href="https://ihe-kaii.github.io/DressCode/">DressCode</a> (right), including front and back renderings of the draped garment. 
+          We highlight design elements accurately captured by our method but missed by <a href="https://ihe-kaii.github.io/DressCode/">DressCode</a> use red color in the input prompt.
+        </small>
+      </h2>
+      <figure class="image">
+        <img src="static/images/result_text.png" alt="Text Guided Generation Results">
+      </figure>
     </div>
   </div>
 </section>
-<!-- End youtube video -->
+<!-- End teaser video -->
 
 
-<!-- Video carousel -->
-<section class="hero is-small">
-  <div class="hero-body">
-    <div class="container">
-      <h2 class="title is-3">Another Carousel</h2>
-      <div id="results-carousel" class="carousel results-carousel">
-        <div class="item item-video1">
-          <video poster="" id="video1" autoplay controls muted loop height="100%">
-            <!-- Your video file here -->
-            <source src="static/videos/carousel1.mp4"
-            type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-video2">
-          <video poster="" id="video2" autoplay controls muted loop height="100%">
-            <!-- Your video file here -->
-            <source src="static/videos/carousel2.mp4"
-            type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-video3">
-          <video poster="" id="video3" autoplay controls muted loop height="100%">\
-            <!-- Your video file here -->
-            <source src="static/videos/carousel3.mp4"
-            type="video/mp4">
-          </video>
-        </div>
-      </div>
+<!-- Method -->
+<section class="hero teaser">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+      <br>
+      <h2 class="title is-3">Image Guided Generation</h2>
+      <h2 class="content">
+        <br>
+        <b>Quality Comparison on Image-Guided Sewing Pattern Generation.</b> 
+        <small>
+          We compare our method with <a href="https://sewformer.github.io/">SewFormer</a> on Internet-collected fashion photographs (left), 
+          and AI-generated design images without human models (right). 
+          The results indicate that our method successfully captures design details from diverse styles, producing sewing patterns that accurately reflect neckline (a, d), cuffs (a, e, g), darts (c, d), and asymmetry (f). 
+          In contrast, <a href="https://sewformer.github.io/">SewFormer</a>'s results exhibit several issues, including incorrect necklines (a, d), missing components (b, g), misplaced or imaginary stitches (d, e), and extraneous pattern pieces (h). 
+          Additionally, since <a href="https://sewformer.github.io/">SewFormer</a>’s pattern generation does not account for body shape, garments like skirts and pants frequently appear oversized around the waist, causing them to sag when draped.
+        </small>
+      </h2>
+      <figure class="image">
+        <img src="static/images/result_image.png" alt="Image Guided Generation Results">
+      </figure>
+      
     </div>
   </div>
 </section>
-<!-- End video carousel -->
+<!-- End teaser video -->
 
-
-
-
-
-
-<!-- Paper poster -->
-<section class="hero is-small is-light">
-  <div class="hero-body">
-    <div class="container">
-      <h2 class="title">Poster</h2>
-
-      <iframe  src="static/pdfs/sample.pdf" width="100%" height="550">
-          </iframe>
-        
-      </div>
+<!-- Method -->
+<section class="hero teaser">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+      <br>
+      <h2 class="title is-3">Sketch Guided Generation</h2>
+      <figure class="image">
+        <img src="static/images/result_sketch.png" alt="Sketch Guided Generation Results">
+      </figure>
+      <h2 class="content">
+          <br>
+          <b>Examples of sketch-based sewing pattern generation. </b> 
+          <small>
+            Our method was able to generate high-quality sewing patterns from design sketches under various styles and could integrate seamlessly with industrial fashion design software for 
+            (a) pattern editing, i.e. sleeve panels in red boxes are merged from separate front/back sleeve panels; 
+            and (b) avatar posture and fabric material editing.
+          </small>
+      </h2>
     </div>
-  </section>
-<!--End paper poster -->
+  </div>
+</section>
+<!-- End teaser video -->
+
+<!-- Method -->
+<section class="hero teaser">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+      <br>
+      <h2 class="title is-3">Applications</h2>
+      <video poster="" id="tree" autoplay controls muted loop height="100%">
+        <!-- Your video here -->
+        <source src="static/videos/d2g_demo.mp4"
+        type="video/mp4">
+      </video>
+    </div>
+  </div>
+</section>
+<!-- End teaser video -->
 
 
 <!--BibTex citation -->
   <section class="section" id="BibTeX">
     <div class="container is-max-desktop content">
       <h2 class="title">BibTeX</h2>
-      <pre><code>BibTex Code Here</code></pre>
+      <pre>
+        <code>
+          @misc{zhou2024design2garmentcodeturningdesignconcepts,
+            title={Design2GarmentCode: Turning Design Concepts to Tangible Garments Through Program Synthesis}, 
+            author={Feng Zhou and Ruiyang Liu and Chen Liu and Gaofeng He and Yong-Lu Li and Xiaogang Jin and Huamin Wang},
+            year={2024},
+            eprint={2412.08603},
+            archivePrefix={arXiv},
+            primaryClass={cs.GR},
+            url={https://arxiv.org/abs/2412.08603}, 
+        }
+        </code>
+      </pre>
     </div>
 </section>
 <!--End BibTex citation -->
