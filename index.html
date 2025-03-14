@@ -56,29 +56,23 @@
               Design2GarmentCode: <br> 
               <small><small><small><small>
                 Turning Design Concepts to Tangible Garments Through Program Synthesis
-              </small></small></small></small>
-            </h1>
-              
-            2025 Computer Vision and Pattern Recognition (CVPR 2025)
-            
-              <div class="is-size-5 publication-authors">
-              <br>
+              </small></small></small></small></h1>
+            <div class="is-size-5 publication-authors">
               <!-- Paper authors -->
-              <span class="author-block">Feng Zhou<sup>1,2</sup>,&nbsp;</span>
+              <span class="author-block"><a href="">Feng Zhou</a><sup>1,2</sup>,&nbsp;</span>
               <span class="author-block"><a href="https://walnut-ree.github.io/">Ruiyang Liu</a><sup>2,&dagger;</sup>,&nbsp;</span>
-              <span class="author-block">Chen Liu<sup>2</sup>,&nbsp;</span>
-              <span class="author-block">Gaofeng He<sup>2</sup>,&nbsp;</span>
+              <span class="author-block"><a href="">Chen Liu</a><sup>2</sup>,&nbsp;</span>
+              <span class="author-block"><a href="">Gaofeng He</a><sup>2</sup>,&nbsp;</span>
               <span class="author-block"><a href="https://dirtyharrylyl.github.io/">Yong-Lu Li</a><sup>3</sup>,&nbsp;</span>
               <span class="author-block"><a href="http://www.cad.zju.edu.cn/home/jin/">Xiaogang Jin</a><sup>4</sup>,&nbsp;</span>
               <span class="author-block"><a href="https://wanghmin.github.io/">Huamin Wang</a><sup>2</sup>,</span>
               </div>
 
-                  <div class="is-size-7 publication-authors">
-                    <span class="author-block"><sup>1</sup>Zhejiang Sci-Tech University&nbsp;&nbsp;&nbsp;&nbsp;</span>
-                    <span class="author-block"><sup>2</sup>Style3D Research&nbsp;&nbsp;&nbsp;&nbsp;</span>
-                    <span class="author-block"><sup>3</sup>Shanghai Jiao Tong University&nbsp;&nbsp;&nbsp;&nbsp;</span>
-                    <span class="author-block"><sup>4</sup>State Key Lab of CAD&CG, Zhejiang University</span>
-                  <br><span class="author-block"><sup>&dagger;</sup>Corresponding Author</span>
+                  <div class="is-size-5 publication-authors">
+                    <span class="author-block"><sup>1</sup>Zhejiang Sci-Tech University,&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                    <span class="author-block"><sup>2</sup>Style3D Research,&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                    <span class="author-block"><sup>3</sup>Shanghai Jiao Tong University,&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                    <span class="author-block"><sup>4</sup>Zhejiang University</span>
                   </div>
 
                   <div class="column has-text-centered">
@@ -108,7 +102,7 @@
 
                 <!-- ArXiv abstract Link -->
                 <span class="link-block">
-                  <a href="" target="_blank"
+                  <a href=""  target="_blank"
                   class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
                     <i class="fas fa-democrat	"></i>
@@ -139,7 +133,7 @@
           <h2 class="content has-text-left">
               Design2GarmentCode is a motility-agnostic sewing pattern generation framework that leverages fine-tuned Large Multimodal Models to generate parametric pattern-making programs from multi-modal design concepts.
               <br><br>
-              Compared with previous methods that directly synthesize vector-quantized patterns, synthesizing directly parametric pattern-making programs allows Design2GarmentCode to generate dedicated, structurally correct patterns from multi-modal design inputs with minimal computational and data requirements.  
+              Compared with previous methods that directly synthesize vector-quantized patterns, synthesizing directly parametric pattern-making programs allows Design2GarmentCode to generate dedicated, structurally correct patterns from multi-modal design inputs with minimal computational and data requirements.
           </h2>
         </div>
       </div>
@@ -147,6 +141,54 @@
   </div>
 </section>
 <!-- End teaser video -->
+
+<!--  <section class="hero teaser">-->
+<!--  <div class="container is-max-desktop">-->
+<!--    <div class="hero-body">-->
+<!--      <br>-->
+<!--&lt;!&ndash;      <h2 class="title is-3">Applications</h2>&ndash;&gt;-->
+<!--      <video poster="" id="dance_video" autoplay  muted loop height="20%">-->
+<!--        &lt;!&ndash; Your video here &ndash;&gt;-->
+<!--        <source src="static/videos/video_show.mp4"-->
+<!--        type="video/mp4">-->
+<!--      </video>-->
+<!--    </div>-->
+<!--  </div>-->
+<!--</section>-->
+<section class="hero teaser">
+  <div class="hero-body">
+    <div class="container">
+<!--      <div id="results-carousel" class="carousel results-carousel">-->
+      <div id="results-carousel" class="carousel results-carousel">
+        <div class="item item-steve">
+          <video poster="" id="steve" autoplay controls muted loop playsinline height="100%"  >
+            <source src="./static/videos/index.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-chair-tp">
+          <video poster="" id="chair-tp" autoplay controls muted loop playsinline height="100%"   >
+            <source src="./static/videos/sketch.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-shiba">
+          <video poster="" id="shiba" autoplay controls muted loop playsinline height="100%"  >
+            <source src="./static/videos/text.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-fullbody">
+          <video poster="" id="fullbody" autoplay controls muted loop playsinline height="100%"  >
+            <source src="./static/videos/picture.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 
 <!-- Paper abstract -->
 <section class="section hero is-light">
@@ -180,11 +222,11 @@
       </figure>
       <h2 class="content">
           <br>
-          <b>Overview of Dress2GarmentCode.</b> 
+          <b>Overview of Dress2GarmentCode.</b>
           <small>
-          (1) <b>Program Learning</b>: we finetune the <i>DSL Generation Agent (DSL-GA)</i> using GarmentCode example programs, teaching it the GarmentCode grammar and the semantics of each design parameter. 
-          (2) <b>Prompt Synthesis</b>: the DSL-GA generates prompts for the <i>Multi-Modal Understanding Agent (MMUA)</i> to interpret and extract relevant design features from the input (3). 
-          (4) <b>Program Synthesis</b>: based on the MMUA's responses, the DSL-GA synthesizes GarmentCode-compliant design configurations and garment programs, which are then executed by the GarmentCode engine to produce sewing patterns and simulated garments (5). 
+          (1) <b>Program Learning</b>: we finetune the <i>DSL Generation Agent (DSL-GA)</i> using GarmentCode example programs, teaching it the GarmentCode grammar and the semantics of each design parameter.
+          (2) <b>Prompt Synthesis</b>: the DSL-GA generates prompts for the <i>Multi-Modal Understanding Agent (MMUA)</i> to interpret and extract relevant design features from the input (3).
+          (4) <b>Program Synthesis</b>: based on the MMUA's responses, the DSL-GA synthesizes GarmentCode-compliant design configurations and garment programs, which are then executed by the GarmentCode engine to produce sewing patterns and simulated garments (5).
           To enhance robustness, we incorporate two validation loops: during program synthesis, we employ rule-based validations (7) to ensure the MMUA's outputs are sufficient for generating complete and valid garment programs and design parameters; after the initial generation, the MMUA compares the generated design with the input and suggests modifications to minimize discrepancies.
         </small>
       </h2>
@@ -202,9 +244,9 @@
       <h2 class="title is-3">Text Guided Generation</h2>
       <h2 class="content">
         <br>
-        <b>Quality Comparison on Text-Guided Sewing Pattern Generation.</b> 
+        <b>Quality Comparison on Text-Guided Sewing Pattern Generation.</b>
         <small>
-          For each design, we present the generated pattern using our method (left) alongside <a href="https://ihe-kaii.github.io/DressCode/">DressCode</a> (right), including front and back renderings of the draped garment. 
+          For each design, we present the generated pattern using our method (left) alongside <a href="https://ihe-kaii.github.io/DressCode/">DressCode</a> (right), including front and back renderings of the draped garment.
           We highlight design elements accurately captured by our method but missed by <a href="https://ihe-kaii.github.io/DressCode/">DressCode</a> use red color in the input prompt.
         </small>
       </h2>
@@ -225,19 +267,19 @@
       <h2 class="title is-3">Image Guided Generation</h2>
       <h2 class="content">
         <br>
-        <b>Quality Comparison on Image-Guided Sewing Pattern Generation.</b> 
+        <b>Quality Comparison on Image-Guided Sewing Pattern Generation.</b>
         <small>
-          We compare our method with <a href="https://sewformer.github.io/">SewFormer</a> on Internet-collected fashion photographs (left), 
-          and AI-generated design images without human models (right). 
-          The results indicate that our method successfully captures design details from diverse styles, producing sewing patterns that accurately reflect neckline (a, d), cuffs (a, e, g), darts (c, d), and asymmetry (f). 
-          In contrast, <a href="https://sewformer.github.io/">SewFormer</a>'s results exhibit several issues, including incorrect necklines (a, d), missing components (b, g), misplaced or imaginary stitches (d, e), and extraneous pattern pieces (h). 
+          We compare our method with <a href="https://sewformer.github.io/">SewFormer</a> on Internet-collected fashion photographs (left),
+          and AI-generated design images without human models (right).
+          The results indicate that our method successfully captures design details from diverse styles, producing sewing patterns that accurately reflect neckline (a, d), cuffs (a, e, g), darts (c, d), and asymmetry (f).
+          In contrast, <a href="https://sewformer.github.io/">SewFormer</a>'s results exhibit several issues, including incorrect necklines (a, d), missing components (b, g), misplaced or imaginary stitches (d, e), and extraneous pattern pieces (h).
           Additionally, since <a href="https://sewformer.github.io/">SewFormer</a>’s pattern generation does not account for body shape, garments like skirts and pants frequently appear oversized around the waist, causing them to sag when draped.
         </small>
       </h2>
       <figure class="image">
         <img src="static/images/result_image.png" alt="Image Guided Generation Results">
       </figure>
-      
+
     </div>
   </div>
 </section>
@@ -254,10 +296,10 @@
       </figure>
       <h2 class="content">
           <br>
-          <b>Examples of sketch-based sewing pattern generation. </b> 
+          <b>Examples of sketch-based sewing pattern generation. </b>
           <small>
-            Our method was able to generate high-quality sewing patterns from design sketches under various styles and could integrate seamlessly with industrial fashion design software for 
-            (a) pattern editing, i.e. sleeve panels in red boxes are merged from separate front/back sleeve panels; 
+            Our method was able to generate high-quality sewing patterns from design sketches under various styles and could integrate seamlessly with industrial fashion design software for
+            (a) pattern editing, i.e. sleeve panels in red boxes are merged from separate front/back sleeve panels;
             and (b) avatar posture and fabric material editing.
           </small>
       </h2>
@@ -277,10 +319,10 @@
       </figure>
       <h2 class="content">
           <br>
-          <b>Examples of sketch-based sewing pattern generation. </b> 
+          <b>Examples of sketch-based sewing pattern generation. </b>
           <small>
-            A major challenge in traditional parametric pattern-making is the need to abstract symbolic programs for new sewing patterns, 
-            which demands both advanced programming skills and pattern-making expertise. Design2GarmentCode addresses this by correlating GarmentCode grammar with LMMs' embedded pattern-making knowledge, 
+            A major challenge in traditional parametric pattern-making is the need to abstract symbolic programs for new sewing patterns,
+            which demands both advanced programming skills and pattern-making expertise. Design2GarmentCode addresses this by correlating GarmentCode grammar with LMMs' embedded pattern-making knowledge,
             enabling the automatic creation of new garment components. Here we demonstrate the code for a layered-skirt component generated by our DSL-GA and simulated 3D garments under various design parameters.
           </small>
       </h2>
@@ -296,7 +338,7 @@
     <div class="hero-body">
       <br>
       <h2 class="title is-3">Applications</h2>
-      <video poster="" id="tree" autoplay controls muted loop height="100%">
+      <video poster="" id="tree" autoplay controls muted loop height=" 20%">
         <!-- Your video here -->
         <source src="static/videos/d2g_demo.mp4"
         type="video/mp4">
