@@ -28,7 +28,6 @@
   <link rel="icon" type="image/x-icon" href="static/images/favicon.ico">
   <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
   rel="stylesheet">
-
   <link rel="stylesheet" href="static/css/bulma.min.css">
   <link rel="stylesheet" href="static/css/bulma-carousel.min.css">
   <link rel="stylesheet" href="static/css/bulma-slider.min.css">
@@ -43,6 +42,79 @@
   <script src="static/js/bulma-carousel.min.js"></script>
   <script src="static/js/bulma-slider.min.js"></script>
   <script src="static/js/index.js"></script>
+
+    <style>
+        .video-wrapper {
+    position: relative;
+    text-align: center;
+    width: 100%;
+    max-width: 1200px; /* 增大最大宽度 */
+    margin: 0 auto;
+        }
+
+      .video-container {
+          display: none;
+          width: 100%;
+      }
+
+      .video-container.is-active {
+          display: block;
+      }
+
+      .video-container video {
+          width: 100%; /* 让视频填满容器 */
+          height: auto;
+          max-height: 600px; /* 限制最大高度，避免太大 */
+          display: block;
+          object-fit: cover; /* 适应不同分辨率 */
+      }
+
+      .nav-button {
+          position: absolute;
+          top: 50%;
+          transform: translateY(-50%);
+          background-color: rgba(0, 0, 0, 0.1);
+          color: white;
+          border: none;
+          padding: 15px 20px; /* 增大按钮大小 */
+          cursor: pointer;
+          z-index: 1000;
+          font-size: 32px; /* 让箭头更大 */
+          border-radius: 5px;
+          opacity: 0.7; /* 整体透明度 */
+          transition: opacity 0.3s ease-in-out;
+      }
+
+      .prev-button {
+          left: -60px; /* 确保箭头在视频外部 */
+      }
+
+      .next-button {
+          right: -60px; /* 确保箭头在视频外部 */
+      }
+
+.pagination-dots {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.dot {
+    width: 12px;
+    height: 12px;
+    margin: 0 5px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.3s;
+    cursor: pointer;
+}
+
+.dot.active {
+    background-color: #333; /* 当前选中的黑点变黑 */
+}
+    </style>
+
 </head>
 <body>
 
@@ -155,39 +227,36 @@
 <!--    </div>-->
 <!--  </div>-->
 <!--</section>-->
-<section class="hero teaser">
-  <div class="hero-body">
-    <div class="container">
-<!--      <div id="results-carousel" class="carousel results-carousel">-->
-      <div id="results-carousel" class="carousel results-carousel">
-        <div class="item item-steve">
-          <video poster="" id="steve" autoplay controls muted loop playsinline height="100%"  >
-            <source src="./static/videos/index.mp4"
-                    type="video/mp4">
-          </video>
+    <section class="section">
+        <div class="container">
+            <div class="video-wrapper">
+                <button class="nav-button prev-button">❮</button>
+                <button class="nav-button next-button">❯</button>
+
+                <div id="video1" class="video-container is-active">
+                    <video autoplay controls muted loop playsinline>
+                        <source src="./static/videos/index.mp4" type="video/mp4">
+                    </video>
+                </div>
+                <div id="video2" class="video-container">
+                    <video autoplay controls muted loop playsinline>
+                        <source src="./static/videos/sketch.mp4" type="video/mp4">
+                    </video>
+                </div>
+                <div id="video3" class="video-container">
+                    <video autoplay controls muted loop playsinline>
+                        <source src="./static/videos/text.mp4" type="video/mp4">
+                    </video>
+                </div>
+                <div id="video4" class="video-container">
+                    <video autoplay controls muted loop playsinline>
+                        <source src="./static/videos/picture.mp4" type="video/mp4">
+                    </video>
+                </div>
+                <div class="pagination-dots"></div>
+            </div>
         </div>
-        <div class="item item-chair-tp">
-          <video poster="" id="chair-tp" autoplay controls muted loop playsinline height="100%"   >
-            <source src="./static/videos/sketch.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-shiba">
-          <video poster="" id="shiba" autoplay controls muted loop playsinline height="100%"  >
-            <source src="./static/videos/text.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-fullbody">
-          <video poster="" id="fullbody" autoplay controls muted loop playsinline height="100%"  >
-            <source src="./static/videos/picture.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
+    </section>
 
 
 <!-- Paper abstract -->
@@ -386,9 +455,63 @@
   </div>
 </footer>
 
-<!-- Statcounter tracking code -->
-  
-<!-- You can add a tracker to track page visits by creating an account at statcounter.com -->
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        var videos = document.querySelectorAll(".video-container");
+        var prevButton = document.querySelector(".prev-button");
+        var nextButton = document.querySelector(".next-button");
+        var paginationDots = document.querySelector(".pagination-dots");
+        var currentIndex = 0;
+
+        // 生成黑点
+        videos.forEach((_, index) => {
+            var dot = document.createElement("span");
+            dot.classList.add("dot");
+            if (index === 0) dot.classList.add("active"); // 初始选中第一个
+            dot.setAttribute("data-index", index);
+            dot.addEventListener("click", function () {
+                currentIndex = parseInt(this.getAttribute("data-index"));
+                showVideo(currentIndex);
+            });
+            paginationDots.appendChild(dot);
+        });
+
+        function showVideo(index) {
+            if (index < 0 || index >= videos.length) return;
+
+            videos.forEach((video, i) => {
+                video.classList.toggle("is-active", i === index);
+                video.querySelector("video").pause();
+            });
+
+            videos[index].querySelector("video").play();
+
+            // 更新黑点
+            document.querySelectorAll(".dot").forEach((dot, i) => {
+                dot.classList.toggle("active", i === index);
+            });
+        }
+
+        prevButton.addEventListener("click", function () {
+            currentIndex = (currentIndex === 0) ? videos.length - 1 : currentIndex - 1;
+            showVideo(currentIndex);
+        });
+
+        nextButton.addEventListener("click", function () {
+            currentIndex = (currentIndex === videos.length - 1) ? 0 : currentIndex + 1;
+            showVideo(currentIndex);
+        });
+
+        showVideo(currentIndex);
+    });
+</script>
+
+
+
+  <!-- Statcounter tracking code -->
+
+  <!-- You can add a tracker to track page visits by creating an account at statcounter.com -->
 
     <!-- End of Statcounter Code -->
 
